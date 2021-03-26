@@ -14,6 +14,7 @@ require "admin/dbconnect.php";?>
     <!-- external style -->
     <link rel="icon" href="../../images/icon.jpg" sizes="16x16" type="image/jpg">
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../BOOTSTRAP/css/bootstrap.min.css">
 </head>
 
 <body>
