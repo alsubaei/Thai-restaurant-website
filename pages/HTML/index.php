@@ -8,7 +8,9 @@
 		<div class="row">
 
 			<div class="col-sm">
-				<b class="Title_of_Category">Categories</b>
+				<P>
+				<h1 class="text-center">Categories</h1>
+				</P>
 			</div>
 		</div>
 		<div class="row">
@@ -25,7 +27,7 @@
 			?>
 					<div class="col-sm">
 						<a href="menu.php?C_id=<?php echo $id ?>"><img class="Image_of_Category" src="../../images/<?php echo $image ?>" alt="new image"></a>
-						<a href="menu.php?C_id=<?php echo $id ?>"><?php echo $name ?></a>
+						<h5 class="bg-warning"><a href="menu.php?C_id=<?php echo $id ?>"><?php echo $name ?></a></h5>
 					</div>
 
 			<?php
