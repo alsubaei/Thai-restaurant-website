@@ -176,7 +176,7 @@ require('dbconnect.php');
                                                                                     echo $row['Meal_id'];
                                                                                 } ?>">
                                     <label>Thai Name</label>
-                                    <input type="text" placeholder="Please Enter your Name " class="form-control" name="tname" value="<?php if (isset($row['Meal_name'])) {
+                                    <input type="text" placeholder="Please Enter Thai Name " class="form-control" name="tname" value="<?php if (isset($row['Meal_name'])) {
                                                                                                                                             echo $row['Meal_name'];
                                                                                                                                         } ?>" required>
                                 </div>
@@ -191,7 +191,7 @@ require('dbconnect.php');
                                 ?>
                                 <div class="form-group">
                                     <label>English Name</label>
-                                    <input type="text" placeholder="Please Enter your Name " class="form-control" name="ename" value="<?php if (isset($row['E_Meal_name'])) {
+                                    <input type="text" placeholder="Please Enter English Name " class="form-control" name="ename" value="<?php if (isset($row['E_Meal_name'])) {
                                                                                                                                             echo $row['E_Meal_name'];
                                                                                                                                         } ?>" required>
                                 </div>
@@ -229,7 +229,7 @@ require('dbconnect.php');
                                 <div class="form-group">
                                     <label>Cost</label>
 
-                                    <input type="text" class="form-control" placeholder="Please Enter your phone" name="cost" value="<?php if (isset($row['Meal_cost'])) {
+                                    <input type="text" class="form-control" placeholder="Please Enter the cost" name="cost" value="<?php if (isset($row['Meal_cost'])) {
                                                                                                                                             echo $row['Meal_cost'];
                                                                                                                                         } ?>" required>
                                 </div>

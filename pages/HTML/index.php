@@ -25,8 +25,8 @@
 					$name = $row['Category_name'];
 					$image = $row['image'];
 			?>
-					<div class="col-sm">
-						<a href="menu.php?C_id=<?php echo $id ?>"><img class="Image_of_Category" src="../../images/<?php echo $image ?>" alt="new image"></a>
+					<div class="col-md">
+						<a href="menu.php?C_id=<?php echo $id ?>"><img class="rounded-circle img-fluid" style="height:236px" src="../../images/<?php echo $image ?>" alt="new image" width="304" height="236"></a>
 						<h5 class="bg-warning"><a href="menu.php?C_id=<?php echo $id ?>"><?php echo $name ?></a></h5>
 					</div>
 
