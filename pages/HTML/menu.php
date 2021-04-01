@@ -58,9 +58,9 @@ include "header.php";
 																?>&M_name_e=<?php echo $meal_name_en
 																			?>&M_image=<?php echo $meal_image
 																						?>&M_cost=<?php echo $meal_cost
-																								?>" >
-								<button title="add" class="btn btn-success btn-sm" style="background-color: #f3781e ;">Add</button>
-								</a><br><br><br>
+																									?>">
+								<button title="add" class="btn btn-success btn-sm" style="background-color: #f3781e ;">Add<span class="badge">+</span></button>
+							</a><br><br><br>
 							<!-- </td> -->
 						</div>
 					<?php
