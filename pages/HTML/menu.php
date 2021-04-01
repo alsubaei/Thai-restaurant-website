@@ -51,15 +51,16 @@ include "header.php";
 						<div class="col-lg-4">
 							<p><?php echo $meal_name ?><br><?php echo $meal_name_en ?></p>
 							<img class="rounded-circle img-fluid" style="height:236px" src="../../images/<?php echo $meal_image ?>" alt="Tom Yum Goong" width="304" height="236">
-							<br><?php echo $meal_cost ?>$
+							<br><br><?php echo $meal_cost ?>$
 							<a href="?C_id=<?php echo $_GET['C_id']
 											?>&M_id=<?php echo $meal_id
 													?>&M_name=<?php echo $meal_name
 																?>&M_name_e=<?php echo $meal_name_en
 																			?>&M_image=<?php echo $meal_image
 																						?>&M_cost=<?php echo $meal_cost
-																								?>">
-								<button title="add" style="background:#7ec449;" class="Select">Add</button></a><br><br><br>
+																								?>" >
+								<button title="add" class="btn btn-success btn-sm" style="background-color: #f3781e ;">Add</button>
+								</a><br><br><br>
 							<!-- </td> -->
 						</div>
 					<?php
@@ -79,7 +80,7 @@ include "header.php";
 		<?php
 		if (isset($_GET['C_id'], $_GET['M_id'])) {
 			$sql = "insert into temp_order (Meal_id, Category_id, image, name, E_name, cost) VALUES  (?,?,?,?,?,?) ";
-			$stm = $con->prepare($sql);
+			$stm = $connection->prepare($sql);
 			$stm->execute(array($_GET['M_id'], $_GET['C_id'], $_GET['M_image'], $_GET['M_name'], $_GET['M_name_e'], $_GET['M_cost']));
 		}
 		?>

@@ -27,7 +27,7 @@
 			?>
 					<div class="col-md">
 						<a href="menu.php?C_id=<?php echo $id ?>"><img class="rounded-circle img-fluid" style="height:236px" src="../../images/<?php echo $image ?>" alt="new image" width="304" height="236"></a>
-						<h5 class="bg-warning"><a href="menu.php?C_id=<?php echo $id ?>"><?php echo $name ?></a></h5>
+						<a class="btn btn-outline-warning"  href="menu.php?C_id=<?php echo $id ?>"><?php echo $name ?></a>
 					</div>
 
 			<?php
