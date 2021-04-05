@@ -49,16 +49,35 @@ include "header.php";
 					?>
 						<!-- <td> -->
 						<div class="col-lg-4">
-							<p><?php echo $meal_name ?><br><?php echo $meal_name_en ?></p>
-							<img class="rounded-circle img-fluid" style="height:236px" src="../../images/<?php echo $meal_image ?>" alt="Tom Yum Goong" width="304" height="236">
-							<br><br><?php echo $meal_cost ?>$
-							<a href="?C_id=<?php echo $_GET['C_id']
-											?>&M_id=<?php echo $meal_id
-													?>&M_name=<?php echo $meal_name
-																?>&M_name_e=<?php echo $meal_name_en
-																			?>&M_image=<?php echo $meal_image
-																						?>&M_cost=<?php echo $meal_cost
-																									?>">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title"><?php echo $meal_name ?></h4>
+										<h5 class="card-title"><?php echo $meal_name_en ?></h4>
+											<img class="rounded-circle img-fluid" style="height:276px" src="../../images/<?php echo $meal_image ?>" alt="Tom Yum Goong" width="344" height="276">
+											<p class="card-text"><?php echo $meal_cost ?>$</p>
+											<a href="?C_id=<?php echo $_GET['C_id']
+															?>&M_id=<?php echo $meal_id
+																	?>&M_name=<?php echo $meal_name
+																				?>&M_name_e=<?php echo $meal_name_en
+																							?>&M_image=<?php echo $meal_image
+																										?>&M_cost=<?php echo $meal_cost
+																													?>" class="btn btn-warning btn-sm">Add<span class="badge">+</span></a>
+								</div>
+								
+							</div>
+							<br>
+							<!-- <p><?#php echo $meal_name ?><br><?php #echo $meal_name_en 
+																	?></p> -->
+							<!-- <img class="rounded-circle img-fluid" style="height:236px" src="../../images/<?php echo $meal_image ?>" alt="Tom Yum Goong" width="304" height="236"> -->
+							<!-- <br><br><?php #echo $meal_cost 
+											?>$ -->
+							<!-- <a href="?C_id=<?php #echo $_GET['C_id'] -->
+												?>&M_id=<?php #echo $meal_id
+														?>&M_name=<?php #echo $meal_name
+																	?>&M_name_e=<?php #echo $meal_name_en
+																				?>&M_image=<?php #echo $meal_image
+																							?>&M_cost=<?php #echo $meal_cost
+																										?>">
 								<button title="add" class="btn btn-success btn-sm" style="background-color: #f3781e ;">Add<span class="badge">+</span></button>
 							</a><br><br><br>
 							<!-- </td> -->
