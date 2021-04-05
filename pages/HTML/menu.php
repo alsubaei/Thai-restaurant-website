@@ -66,21 +66,6 @@ include "header.php";
 								
 							</div>
 							<br>
-							<!-- <p><?#php echo $meal_name ?><br><?php #echo $meal_name_en 
-																	?></p> -->
-							<!-- <img class="rounded-circle img-fluid" style="height:236px" src="../../images/<?php echo $meal_image ?>" alt="Tom Yum Goong" width="304" height="236"> -->
-							<!-- <br><br><?php #echo $meal_cost 
-											?>$ -->
-							<!-- <a href="?C_id=<?php #echo $_GET['C_id'] -->
-												?>&M_id=<?php #echo $meal_id
-														?>&M_name=<?php #echo $meal_name
-																	?>&M_name_e=<?php #echo $meal_name_en
-																				?>&M_image=<?php #echo $meal_image
-																							?>&M_cost=<?php #echo $meal_cost
-																										?>">
-								<button title="add" class="btn btn-success btn-sm" style="background-color: #f3781e ;">Add<span class="badge">+</span></button>
-							</a><br><br><br>
-							<!-- </td> -->
 						</div>
 					<?php
 					}
