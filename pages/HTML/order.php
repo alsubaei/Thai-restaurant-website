@@ -1,5 +1,7 @@
 <?php
-			include "header.php";
+			include "header.php";	
+			// Basic Collapsible
+			// Accordion
 		?>
     <div class="Main_content">
         <br><br><br>
