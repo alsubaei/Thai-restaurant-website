@@ -48,7 +48,7 @@ include "header.php";
 						$meal_cost = $row['Meal_cost'];
 					?>
 						<!-- <td> -->
-						<div class="col-lg-4">
+						<div class="col-sm-6 col-lg-4">
 							<div class="card-deck">
 								<div class="card">
 									<div class="card-body">
