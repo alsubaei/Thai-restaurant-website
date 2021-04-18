@@ -7,10 +7,8 @@ if (isset($_SESSION['name'])) {
     if ($query->rowcount() > 0) {
         $row = $query->fetch();
     }
-}
-else
-{
-    header("LOCATION:login.php");
+} else {
+    header("location:login.php");
 }
 ?>
 <center>
@@ -20,9 +18,9 @@ else
             <h1 align="center">Profile Account</h1>
             <img src="../../images/<?php if (isset($row['User_image'])) {
                                         echo $row['User_image'];
-                                    }  ?>" alt="<?php if (isset($row['User_image'])) {
-                                                                    echo $row['User_image'];
-                                                                } ?>" style="border: none;
+                                    } ?>" alt="<?php if (isset($row['User_image'])) {
+                                                    echo $row['User_image'];
+                                                } ?>" style="border: none;
 	width: 100px;
 	border-radius: 50px;
 	height: 100px;
