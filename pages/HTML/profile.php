@@ -2,9 +2,14 @@
 
 $sql = "select * from users  where User_name = :x1 ";
 $query = $connection->prepare($sql);
-$query->execute(array("x1" => $_SESSION['name']));
-if ($query->rowcount() > 0) {
-    $row = $query->fetch();
+if (isset($_SESSION['name'])) {
+    $query->execute(array("x1" => $_SESSION['name']));
+    if ($query->rowcount() > 0) {
+        $row = $query->fetch();
+    }
+}
+else{
+    header("location:login.php");
 }
 ?>
 <center>
@@ -12,7 +17,11 @@ if ($query->rowcount() > 0) {
     <div class="Main_content"><br><br><br>
         <form action="" method="post" enctype="multipart/form-data">
             <h1 align="center">Profile Account</h1>
-            <img src="../../images/<?php echo $row['User_image']; ?>" alt="<?php echo $row['User_image']; ?>" style="border: none;
+            <img src="../../images/<?php if (isset($row['User_image'])) {
+                                        echo $row['User_image'];
+                                    } ?>" alt="<?php if (isset($row['User_image'])) {
+                                                    echo $row['User_image'];
+                                                } ?>" style="border: none;
 	width: 100px;
 	border-radius: 50px;
 	height: 100px;
