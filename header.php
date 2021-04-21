@@ -47,7 +47,7 @@ require "admin/dbconnect.php"; ?>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm fixed-top" style="padding: 0px;">
+    <nav class="navbar navbar-expand-md fixed-top" style="padding: 0px;">
         <!-- Brand -->
         <!-- <div> -->
         <a class="navbar-brand" style="padding: 0px; margin-right:px;" href="index.php">
@@ -56,7 +56,7 @@ require "admin/dbconnect.php"; ?>
         <!-- Toggler/collapsibe Button -->
         <!-- </div> -->
         <!-- Navbar links -->
-        <div class="justify-content-center collapse navbar-collapse " id="collapsibleNavbar" style="margin-right:55px;">
+        <div class="justify-content-center collapse navbar-collapse" id="collapsibleNavbar" style="margin-right:55px;">
             <ul class="navbar-nav nav-justified" style="width: 100%;">
                 <li class="nav-item">
                     <a href="index.php" class="nav-link">Home</a>
@@ -76,7 +76,7 @@ require "admin/dbconnect.php"; ?>
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a href="menu.php" class=" nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Menu</a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu mt-n1">
                         <?php
                         $query = "select * from category";
                         $stm = $connection->prepare($query);
@@ -103,11 +103,11 @@ require "admin/dbconnect.php"; ?>
             </ul>
         </div>
         <div style="position: fixed; top:0; right:0;">
-            <button class="navbar-toggler b " type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="padding: 0px;">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-success" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="padding: 0px;">
+                <span class="fa fa-align-justify p-2"></span>
             </button>
-            <a class="navbar-brand" style="padding: 0px;" href="index.php">
-                <img src="images/trolley.png" alt="trolley" width="35" height="40">
+            <a class="navbar-brand" style="padding:0px;" href="index.php">
+                <img src="images/trolley.png" alt="trolley" width="30" height="40">
             </a>
         </div>
     </nav>
