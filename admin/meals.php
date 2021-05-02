@@ -57,7 +57,7 @@ require('dbconnect.php');
                         $ext = strtolower(end($ext));
                         if (in_array($ext, $mytypes)) {
                             if ($size <= 2000000) {
-                                if (!(move_uploaded_file($_FILES['image']['tmp_name'], "../../../images/$imge_name"))) {
+                                if (!(move_uploaded_file($_FILES['image']['tmp_name'], "../images/$imge_name"))) {
                                     $error['upload'] = "<h5 style='color:red '><b>Photo not upload successfully</b></h5>";
                                 }
                             } else {
@@ -207,7 +207,7 @@ require('dbconnect.php');
                                 <div class="form-group">
                                     <label>Meal image</label><br>
                                     <?php if (isset($row['image'])) {
-                                    ?><img src="../../../images/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>" style="border: none;
+                                    ?><img src="../images/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>" style="border: none;
                                         width: 100px;
                                         border-radius: 50px;
                                         height: 100px;
@@ -320,7 +320,7 @@ require('dbconnect.php');
                                                 <td><?php echo  $User_name; ?></td>
                                                 <td><?php echo  $E_User_name; ?></td>
 
-                                                <td><img src="../../../images/<?php echo $User_image; ?>" alt="<?php echo $User_image; ?>" style="border: none;
+                                                <td><img src="../images/<?php echo $User_image; ?>" alt="<?php echo $User_image; ?>" style="border: none;
                                                                                                                                                 width: 100px;
                                                                                                                                                 border-radius: 50px;
                                                                                                                                                 height: 100px;
