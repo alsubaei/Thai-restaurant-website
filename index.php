@@ -39,7 +39,7 @@ A slideshow component for cycling through elements—images or slides of text—
 			<li data-target="#demo" data-slide-to="18"></li>
 		</ol>
 		<div class="carousel-inner">
-			<div class="carousel-item active">
+			<div class="carousel-item">
 				<img src="images/Cha Yen, Thai style tea.jpg" alt="Thai iced tea" width="1100" height="630">
 				<div class="carousel-caption d-none d-sm-block">
 					<h1 class="text-warning text-capitalize display-4 display-4 bg-light">Cha Yen</h1>
@@ -60,7 +60,7 @@ A slideshow component for cycling through elements—images or slides of text—
 					<h2><small> <kbd> Green Chicken Curry</kbd></small></h2>
 				</div>
 			</div>
-			<div class="carousel-item">
+			<div class="carousel-item  active">
 				<img src="images/Guay Teow (Noodle Soup).jpg" alt="Noodle Soup" width="1100" height="630">
 				<div class="carousel-caption d-none d-sm-block">
 					<h1 class="text-warning text-capitalize display-4 bg-light">Guay Teow</h1>
