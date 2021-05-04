@@ -8,21 +8,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (isset($_POST["name"])) {
             $name = trim($_POST["name"]);
             if (is_numeric($name)) {
-                $error['name'] = "<h5 style='color:red '><b>Name is number!<br>Please enter just alphabet</b></h5>";
+                $error['name'] = "<span style='color:red'><small>Name is number!<br>Please enter just alphabet</small></span>";
             }
         } else {
-            $error['Writename'] = "<h5 style='color:red '><b> Enter your Name</b></h5>";
+            $error['Writename'] = "<span style='color:red'><small>Enter your Name</small></span>";
         }
 
         if (isset($_POST['password'])) {
             $password = trim($_POST['password']);
             if (is_numeric($password)) {
-                $error['pass'] = "<h5 style='color:red '><b>Password is number!<br>Please make mix</b></h5>";
+                $error['pass'] = "<span style='color:red'><small>Password is number!<br>Please make mix</small></span>";
             } elseif (strlen($password) < 5) {
-                $error['long_pass'] = "<h5 style='color:red '><b>Password is smaller than 5!<br>Please try again</b></h5>";
+                $error['long_pass'] = "<span style='color:red'><small>Password is smaller than 5!<br>Please try again</small></span>";
             }
         } else {
-            $error['Writepass'] = "<h5 style='color:red '><b>Enter your password</b></h5>";
+            $error['Writepass'] = "<span style='color:red'><small>Enter your password</small></span>";
         }
 
         if (empty($error)) {
@@ -62,60 +62,80 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 ?>
-<center>
-    <div class="container"><br><br><br>
-        <form action="" method="POST">
-            <h1 align="center">Login</h1>
-            <div class="row">
-            <div class="col-3"></div>
-                <div class="col-6">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+
+<div class="container mb-5"><br><br><br>
+    <form action="" method="POST">
+        <h1 align="center">Login</h1>
+        <div class="card-deck mr-xl-5 ml-xl-5">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row pt-4">
+                        <div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
+                        <div class="col-10 col-xl-6 col-lg-6 col-md-8">
+                            <label for="uname">Username:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="uname" placeholder="Username" name="name">
+                            </div>
+                            <?php
+                            if (isset($error['Writename'])) {
+                                echo ($error['Writename']);
+                            }
+                            if (isset($error['name'])) {
+                                echo ($error['name']);
+                            }
+                            ?>
                         </div>
-                        <input type="text" class="form-control" placeholder="Username" name="name">
+                        <div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
                     </div>
-                </div>
-                <div class="col-3"></div>
-            </div>
 
-            <?php if (isset($error['name'])) {
-                echo ($error['name']);
-            } ?>
-            <?php if (isset($error['Writename'])) {
-                echo ($error['Writename']);
-            } ?>
-
-            <div class="row"><div class="col-3"></div>
-                <div class="col-6">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                    <div class="row mt-4">
+                        <div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
+                        <div class="col-10 col-xl-6 col-lg-6 col-md-8">
+                            <label for="pwd">Password:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" id="pwd" placeholder="Password" name="password">
+                            </div>
+                            <?php
+                            if (isset($error['Writepass'])) {
+                                echo ($error['Writepass']);
+                            }
+                            if (isset($error['pass'])) {
+                                echo ($error['pass']);
+                            }
+                            if (isset($error['long_pass'])) {
+                                echo ($error['long_pass']);
+                            }
+                            ?><div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
                         </div>
-                        <input type="password" class="form-control" placeholder="Password" name="password">
                     </div>
-                    <div class="col-3"></div>
+                    <div class="row mt-4">
+                        <div class="col-5"></div>
+                        <div class="col-2">
+                            <input type="submit" name="submit" value="Login" class="btn btn-warning stretched-link mb-2">
+                        </div>
+                        <div class="col-5"></div>
+                    </div>
+                    <?php if (isset($try)) {
+                        echo ($try);
+                    } ?>
                 </div>
+
+
             </div>
-            <?php if (isset($error['pass'])) {
-                echo ($error['pass']);
-            } ?>
-            <?php if (isset($error['long_pass'])) {
-                echo ($error['long_pass']);
-            } ?>
-            <?php if (isset($error['Writepass'])) {
-                echo ($error['Writepass']);
-            } ?>
-            <input type="submit" name="submit" value="Login" class="btn btn-warning stretched-link">
+        </div>
+</div>
 
-            <?php if (isset($try)) {
-                echo ($try);
-            } ?>
-        </form>
 
-    </div>
+</form>
 
-</center>
+</div>
 <?php
 include "footer.php";
 ?>
