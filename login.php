@@ -33,20 +33,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $try = 0;
             if ($stm->rowCount()) {
                 $row = $stm->fetch();
-                if(password_verify( $password ,$row['Password'] ) )
-                {
-                if ($row['Role_id'] == 1) {
-                    echo "admin";
-                    $_SESSION['name'] = $name;
-                    $_SESSION['role'] = 1;
-                    header("LOCATION:admin/index.php");
-                } else {
-                    echo "user";
-                    $_SESSION['name'] = $name;
-                    $_SESSION['role'] = 2;
-                    header("LOCATION:index.php");
+                if (password_verify($password, $row['Password'])) {
+                    if ($row['Role_id'] == 1) {
+                        echo "admin";
+                        $_SESSION['name'] = $name;
+                        $_SESSION['role'] = 1;
+                        header("LOCATION:admin/index.php");
+                    } else {
+                        echo "user";
+                        $_SESSION['name'] = $name;
+                        $_SESSION['role'] = 2;
+                        header("LOCATION:index.php");
+                    }
                 }
-            }
             } else {
 ?>
                 <script>
@@ -58,25 +57,46 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }
     }
-    if(isset($_POST['signup'])) {
-         header("LOCATION:signup.php");
+    if (isset($_POST['signup'])) {
+        header("LOCATION:signup.php");
     }
 }
 ?>
 <center>
-    <div class="Main_content"><br><br><br>
+    <div class="container"><br><br><br>
         <form action="" method="POST">
             <h1 align="center">Login</h1>
-            name<br>
-            <input type="text" name="name" placeholder="name" class="signup">
+            <div class="row">
+            <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" name="name">
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+
             <?php if (isset($error['name'])) {
                 echo ($error['name']);
             } ?>
             <?php if (isset($error['Writename'])) {
                 echo ($error['Writename']);
             } ?>
-            <br>passowrd<br>
-            <input type="password" name="password" placeholder="password" class="signup" >
+
+            <div class="row"><div class="col-3"></div>
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Password" name="password">
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </div>
             <?php if (isset($error['pass'])) {
                 echo ($error['pass']);
             } ?>
@@ -86,8 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <?php if (isset($error['Writepass'])) {
                 echo ($error['Writepass']);
             } ?>
-            <br><br>
-            <input type="submit" name="submit" value="Login" class="login">
+            <input type="submit" name="submit" value="Login" class="btn btn-warning stretched-link">
 
             <?php if (isset($try)) {
                 echo ($try);
