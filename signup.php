@@ -173,7 +173,7 @@
                                     $extend = strtolower(end($extendName));
                                     if (in_array($extend, $array)) {
                                         if ($_FILES['image']['size'] <= 2000000000) {
-                                            move_uploaded_file($tmp, "../../images/$image_name");
+                                            move_uploaded_file($tmp, "../images/$image_name");
                                         } else {
                                             echo "<h4>your file size is not support</h4>";
                                         }
