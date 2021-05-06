@@ -63,22 +63,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 ?>
 
-<div class="container mb-5"><br><br><br>
+<div class="container mb-5"><br><br>
     <form action="" method="POST">
         <h1 align="center">Login</h1>
         <div class="card-deck mr-xl-5 ml-xl-5">
             <div class="card">
                 <div class="card-body">
 
-                    <div class="row pt-4">
+                    <div class="row pt-3">
                         <div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
                         <div class="col-10 col-xl-6 col-lg-6 col-md-8">
                             <label for="uname">Username:</label>
-                            <div class="input-group">
+                            <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" id="uname" placeholder="Username" name="name">
+                                <input type="text" class="form-control" id="uname" placeholder="Username" name="name" autofocus>
                             </div>
                             <?php
                             if (isset($error['Writename'])) {
@@ -92,11 +92,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
                     </div>
 
-                    <div class="row mt-4">
+                    <div class="row mt-3">
                         <div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
                         <div class="col-10 col-xl-6 col-lg-6 col-md-8">
                             <label for="pwd">Password:</label>
-                            <div class="input-group">
+                            <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-key"></i></span>
                                 </div>
@@ -115,6 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             ?><div class="col-1 col-xl-3 col-lg-3 col-md-2"></div>
                         </div>
                     </div>
+                    
                     <div class="row mt-4">
                         <div class="col-5"></div>
                         <div class="col-2">
@@ -126,8 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         echo ($try);
                     } ?>
                 </div>
-
-
             </div>
         </div>
 </div>
