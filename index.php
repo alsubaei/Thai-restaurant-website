@@ -24,33 +24,33 @@ A slideshow component for cycling through elements—images or slides of text—
 			$stm = $connection->prepare($query);
 			$stm->execute();
 			if ($stm->rowCount()) {
-				for ( $r=1; $r <=  $stm->rowCount(); $r++) {
+				for ($slide = 1; $slide <= 10; $slide++) {
 			?>
-			<li data-target="#demo" data-slide-to="1"></li>
+					<li data-target="#demo" data-slide-to="<?php echo $slide; ?>"></li>
 			<?php
 				}
 			}
 			?>
 		</ol>
 		<div class="carousel-inner">
-		<?php
-			$query = "select * from meal where Active = :x1 ORDER BY RAND()
+			<?php
+			$query = "select * from meal where Active = 1 ORDER BY RAND()
 			LIMIT 10;";
 			$stm = $connection->prepare($query);
-			$stm->execute(array("x1"=>"1"));
+			$stm->execute();
 			if ($stm->rowCount()) {
 				foreach ($stm->fetchAll() as $row) {
 					$Meal_name = $row['Meal_name'];
 					$E_Meal_name = $row['E_Meal_name'];
 					$image = $row['image'];
 			?>
-			<div class="carousel-item">
-				<img src="images/<?php echo $image; ?>" alt="<?php echo $E_Meal_name; ?>" width="1100" height="630">
-				<div class="carousel-caption d-none d-sm-block">
-					<h1 class="text-warning text-capitalize display-4 display-4 bg-light"><?php echo $Meal_name; ?></h1>
-					<h2><small> <kbd><?php echo $E_Meal_name; ?> </kbd></small></h2>
-				</div>
-			</div>
+					<div class="carousel-item">
+						<img src="images/<?php echo $image; ?>" alt="<?php echo $E_Meal_name; ?>" width="1100" height="630">
+						<div class="carousel-caption d-none d-sm-block">
+							<h1 class="text-warning text-capitalize display-4 display-4 bg-light"><?php echo $Meal_name; ?></h1>
+							<h2><small> <kbd><?php echo $E_Meal_name; ?> </kbd></small></h2>
+						</div>
+					</div>
 			<?php
 				}
 			}
@@ -89,10 +89,15 @@ A slideshow component for cycling through elements—images or slides of text—
 					$image = $row['image'];
 			?>
 					<div class="col-md">
-						<a href="menu.php?C_id=<?php echo $id ?>"><img class="rounded-circle img-fluid" style="height:236px" src="images/<?php echo $image ?>" alt="images/<?php echo $image ?>" width="304" height="236"></a>
-						<a class="btn btn-outline-warning" href="menu.php?C_id=<?php echo $id ?>"><?php echo $name ?></a>
+						<div class="card-deck">
+							<div class="card">
+								<div class="card-body">
+									<a href="menu.php?C_id=<?php echo $id ?>"><img class="rounded-circle img-fluid" style="height:236px" src="images/<?php echo $image ?>" alt="images/<?php echo $image ?>" width="304" height="236"></a>
+									<a class="btn btn-warning stretched-link" href="menu.php?C_id=<?php echo $id ?>"><?php echo $name ?></a>
+								</div>
+							</div>
+						</div>
 					</div>
-
 			<?php
 				}
 			}
