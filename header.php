@@ -18,6 +18,21 @@ require "admin/dbconnect.php"; ?>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <style>
+        .btn-warning:not(:disabled):not(.disabled):active,
+        .btn-warning:not(:disabled):not(.disabled).active,
+        .show>.btn-warning.dropdown-toggle, .btn-warning:hover {
+
+            color: #212529;
+            background-color: #7dc24b;
+            border-color: #7dc24b;
+        }
+
+        .btn-warning:not(:disabled):not(.disabled):active:focus,
+        .btn-warning:not(:disabled):not(.disabled).active:focus,
+        .show>.btn-warning.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem #28a745;
+        }
+
         a {
             color: #ee7a25;
         }
@@ -101,7 +116,7 @@ require "admin/dbconnect.php"; ?>
                 <nav class="navbar navbar-expand p-0">
                     <!-- Navbar links -->
                     <div class="collapse navbar-collapse justify-content-end">
-                        
+
                         <ul class="navbar-nav nav-pills">
 
                             <li class="nav-item">

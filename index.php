@@ -11,6 +11,7 @@
 				width: 100%;
 				object-fit: cover;
 			}
+			
 		</style>
 	</head>
 	<!-- beginning of  Carousel
@@ -88,7 +89,7 @@ A slideshow component for cycling through elements—images or slides of text—
 					$name = $row['Category_name'];
 					$image = $row['image'];
 			?>
-					<div class="col-md">
+					<div class="col-sm-6 col-lg-4">
 						<div class="card-deck">
 							<div class="card">
 								<div class="card-body">
@@ -97,6 +98,7 @@ A slideshow component for cycling through elements—images or slides of text—
 								</div>
 							</div>
 						</div>
+						<br>
 					</div>
 			<?php
 				}

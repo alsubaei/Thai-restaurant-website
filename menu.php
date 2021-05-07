@@ -2,11 +2,11 @@
 include "header.php";
 ?>
 <div class="container-fluid">
-	<center><br><br><br>
+	<center><br><br>
 		<h1 class="text-center">Order Menu</h1>
 		<!-- <table><tbody> -->
 		<!-- <tr> -->
-		<div class="row"><br></div>
+		
 		<!-- from database name of category -->
 		<?php
 		if (isset($_GET['C_id'])) {
@@ -29,7 +29,7 @@ include "header.php";
 			}
 			?>
 			<!-- </tr> -->
-			<div class="row"><br></div>
+			
 			<!-- <tr> -->
 			<!-- foreach()  -->
 			<?php
