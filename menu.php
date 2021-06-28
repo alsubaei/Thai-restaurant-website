@@ -2,7 +2,7 @@
 include "header.php";
 ?>
 <div class="container-fluid">
-	<center><br><br>
+	<center><br><br><br>
 		<h1 class="text-center">Order Menu</h1>
 		<!-- <table><tbody> -->
 		<!-- <tr> -->

@@ -40,7 +40,8 @@ require "admin/dbconnect.php"; ?>
         nav,
         ul,
         .background {
-            background: #f2f1f3;
+            /* background: #f2f1f3; */
+            background: white;
         }
 
         ul li a:hover {
@@ -56,18 +57,18 @@ require "admin/dbconnect.php"; ?>
         .dropdown-item:active {
             background: #fb7c07;
             color: white;
-        }
+        }  
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row fixed-top">
-            <div class="col-8 pr-0">
+            <div class="col-11 pr-0">
                 <nav class="navbar navbar-expand-md p-0">
                     <!-- Brand -->
-                    <a class="navbar-brand" style="padding: 0px; margin-right:0px;" href="index.php">
-                        <img src="images/log.png " alt="logo" height="40">
+                    <a class="navbar-brand" style="padding: 10px; margin-right:0px;" href="index.php">
+                        <img src="images/logo.png " alt="logo" height="40">
                     </a>
                     <!-- Toggler/collapsibe Button -->
                     <!-- Navbar links -->
@@ -112,14 +113,14 @@ require "admin/dbconnect.php"; ?>
             </div>
 
 
-            <div class="col-3 p-0">
+            <div class="col-1 p-0">
                 <nav class="navbar navbar-expand p-0">
                     <!-- Navbar links -->
-                    <div class="collapse navbar-collapse justify-content-end">
+                    <div class="collapse navbar-collapse">
 
-                        <ul class="navbar-nav nav-pills">
+                        <ul class="navbar-nav nav-pills" >
 
-                            <li class="nav-item">
+                            <li class="nav-item"style="padding: 10px 0px;">
                                 <a href="order.php" class="nav-link pl-3 pr-3">
                                     <i class="fa fa-shopping-basket">
                                         <?php
@@ -130,21 +131,22 @@ require "admin/dbconnect.php"; ?>
                                     </i>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" style="padding: 10px 0px;">
                                 <div class="dropdown">
                                     <a href="menu.php" class="nav-link pl-3 pr-3" id="navbardrop" data-toggle="dropdown"><i class="fa fa-user-circle-o"></i></a>
                                     <div class="dropdown-menu dropdown-menu-right mt-n1">
-                                        <a href="login.php" class="dropdown-item">Login</a>
+                                       <div class="arrow" style="left: 84px;"></div>
+                                     <a href="login.php" class="dropdown-item">Login</a>
                                         <a href="signup.php" class="dropdown-item">Sign up</a>
                                         <?php
                                         if (isset($_SESSION['name'])) {
                                         ?>
                                             <a href="profile.php" class="dropdown-item disabled">Profile</a>
-                                            <a href="login.php" class="dropdown-item disabled">Logout</a>
+                                            <a href="Logout.php" class="dropdown-item disabled">Logout</a>
                                         <?php
                                         } else { ?>
                                             <a href="profile.php" class="dropdown-item">Profile</a>
-                                            <a href="login.php" class="dropdown-item">Logout</a>
+                                            <a href="Logout.php" class="dropdown-item">Logout</a>
                                         <?php
                                         }
                                         ?>
